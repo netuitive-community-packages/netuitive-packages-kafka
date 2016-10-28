@@ -1,0 +1,46 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "ACE",
+    "id" : null,
+    "packageId" : null,
+    "name" : "Kafka",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SERVER",
+      "elementTags" : null,
+      "metricMatches" : "^kafka.*"
+    },
+    "metrics" : [ {
+      "match" : "kafka.cluster.*",
+      "properties" : {
+        "baseline" : false,
+        "correlation" : false
+      }
+    }, {
+      "match" : "^kafka\\.consumer_group\\.((?!consumer_lag$).)*$",
+      "properties" : {
+        "baseline" : false,
+        "correlation" : false
+      }
+    }, {
+      "match" : "^kafka\\.controller\\.((?!broker-\\d).).*",
+      "properties" : {
+        "baseline" : false,
+        "correlation" : false
+      }
+    }, {
+      "match" : "^kafka\\.log\\..*(LogEndOffset|LogStartOffset)$",
+      "properties" : {
+        "baseline" : false,
+        "correlation" : false
+      }
+    }, {
+      "match" : "^kafka\\.utils\\..*",
+      "properties" : {
+        "baseline" : false,
+        "correlation" : false
+      }
+    } ]
+  }
+}

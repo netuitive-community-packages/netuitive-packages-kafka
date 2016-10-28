@@ -1,0 +1,21 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "METRIC_META",
+    "id" : null,
+    "packageId" : null,
+    "name" : "Kafka",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "SERVER",
+      "elementTags" : null,
+      "metricMatches" : "^kafka.*"
+    },
+    "metrics" : [ {
+      "match" : "kafka\\.server\\..*Metrics\\..*",
+      "properties" : {
+        "type" : "COUNTER"
+      }
+    } ]
+  }
+}
