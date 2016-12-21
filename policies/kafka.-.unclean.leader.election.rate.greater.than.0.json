@@ -1,8 +1,8 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Kafka - No Active Controllers",
-    "description" : "There are no active controllers in the Kafka cluster.",
+    "name" : "Kafka - Unclean Leader Election Rate Greater Than 0",
+    "description" : "An out-of-sync replica was chosen as leader because none of the available replicas were in sync.  Some data loss has occurred as a result.",
     "scope" : {
       "elementName" : null,
       "elementNameExclude" : null,
@@ -13,12 +13,12 @@
     },
     "duration" : 300,
     "conditions" : [ {
-      "metric" : "kafka.controller.ActiveControllerCount",
+      "metric" : "kafka.controller.UncleanLeaderElectionsPerSec.Count",
       "wildcard" : null,
       "metricScopeTags" : { },
       "analytic" : "actual",
-      "operator" : "<",
-      "level" : 1.0,
+      "operator" : ">",
+      "level" : 0.0,
       "level2" : null,
       "metricThresholdLevel" : null,
       "metricThresholdAnalytic" : null

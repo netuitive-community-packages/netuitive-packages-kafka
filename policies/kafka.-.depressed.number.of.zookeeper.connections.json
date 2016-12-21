@@ -1,8 +1,8 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Kafka - No Active Controllers",
-    "description" : "There are no active controllers in the Kafka cluster.",
+    "name" : "Kafka - Depressed Number of Zookeeper Connections",
+    "description" : "The number of active connections to Zookeeper has been lower than expected for at least the past 30 minutes.",
     "scope" : {
       "elementName" : null,
       "elementNameExclude" : null,
@@ -11,14 +11,14 @@
       "elementType" : null,
       "elementTags" : { }
     },
-    "duration" : 300,
+    "duration" : 1800,
     "conditions" : [ {
-      "metric" : "kafka.controller.ActiveControllerCount",
+      "metric" : "kafka.zookeeper.zk_num_alive_connections",
       "wildcard" : null,
       "metricScopeTags" : { },
-      "analytic" : "actual",
+      "analytic" : "baselineDeviation",
       "operator" : "<",
-      "level" : 1.0,
+      "level" : null,
       "level2" : null,
       "metricThresholdLevel" : null,
       "metricThresholdAnalytic" : null
@@ -26,7 +26,7 @@
     "eventConditions" : [ ],
     "actions" : [ {
       "type" : "event",
-      "category" : 3
+      "category" : 2
     } ],
     "enabled" : true,
     "deleted" : false,

@@ -1,8 +1,8 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Kafka - No Active Controllers",
-    "description" : "There are no active controllers in the Kafka cluster.",
+    "name" : "Kafka - Elevated Consumer Purgatory Size",
+    "description" : "The purgatory size for consumer fetch requests is higher than expected.  This may be causing increases in consumer request latency.",
     "scope" : {
       "elementName" : null,
       "elementNameExclude" : null,
@@ -11,14 +11,14 @@
       "elementType" : null,
       "elementTags" : { }
     },
-    "duration" : 300,
+    "duration" : 900,
     "conditions" : [ {
-      "metric" : "kafka.controller.ActiveControllerCount",
+      "metric" : "kafka.server.DelayedOperationPurgatory.Fetch.PurgatorySize",
       "wildcard" : null,
       "metricScopeTags" : { },
-      "analytic" : "actual",
-      "operator" : "<",
-      "level" : 1.0,
+      "analytic" : "baselineDeviation",
+      "operator" : ">",
+      "level" : null,
       "level2" : null,
       "metricThresholdLevel" : null,
       "metricThresholdAnalytic" : null
@@ -26,7 +26,7 @@
     "eventConditions" : [ ],
     "actions" : [ {
       "type" : "event",
-      "category" : 3
+      "category" : 2
     } ],
     "enabled" : true,
     "deleted" : false,

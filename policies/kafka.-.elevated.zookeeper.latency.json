@@ -1,8 +1,8 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Kafka - No Active Controllers",
-    "description" : "There are no active controllers in the Kafka cluster.",
+    "name" : "Kafka - Elevated Zookeeper Latency",
+    "description" : "The average latency for Zookeeper requests has been higher than expected for at least the past 15 minutes.",
     "scope" : {
       "elementName" : null,
       "elementNameExclude" : null,
@@ -11,14 +11,14 @@
       "elementType" : null,
       "elementTags" : { }
     },
-    "duration" : 300,
+    "duration" : 900,
     "conditions" : [ {
-      "metric" : "kafka.controller.ActiveControllerCount",
+      "metric" : "kafka.zookeeper.zk_avg_latency",
       "wildcard" : null,
       "metricScopeTags" : { },
-      "analytic" : "actual",
-      "operator" : "<",
-      "level" : 1.0,
+      "analytic" : "baselineDeviation",
+      "operator" : ">",
+      "level" : null,
       "level2" : null,
       "metricThresholdLevel" : null,
       "metricThresholdAnalytic" : null
@@ -26,7 +26,7 @@
     "eventConditions" : [ ],
     "actions" : [ {
       "type" : "event",
-      "category" : 3
+      "category" : 2
     } ],
     "enabled" : true,
     "deleted" : false,

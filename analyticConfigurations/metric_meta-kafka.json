@@ -12,9 +12,88 @@
       "metricMatches" : "^kafka.*"
     },
     "metrics" : [ {
-      "match" : "kafka\\.server\\..*Metrics\\..*",
+      "match" : "kafka\\.(server|network)\\..*Metrics\\..*\\.Count",
       "properties" : {
         "type" : "COUNTER"
+      }
+    }, {
+      "match" : "kafka.zookeeper.zk_packets.*",
+      "properties" : {
+        "type" : "COUNTER"
+      }
+    }, {
+      "match" : "kafka\\..*Ms\\.Mean$",
+      "properties" : {
+        "tags" : {
+          "unit" : "ms"
+        }
+      }
+    }, {
+      "match" : "kafka\\..*\\.Bytes.*PerSec.*",
+      "properties" : {
+        "sparseDataStrategy" : "ReplaceWithZero",
+        "tags" : {
+          "unit" : "Bps"
+        }
+      }
+    }, {
+      "match" : "kafka\\..*byte-rate$",
+      "properties" : {
+        "sparseDataStrategy" : "ReplaceWithZero",
+        "tags" : {
+          "unit" : "Bps"
+        }
+      }
+    }, {
+      "match" : "kafka\\..*-time-ns.*",
+      "properties" : {
+        "sparseDataStrategy" : "ReplaceWithZero",
+        "tags" : {
+          "unit" : "ns"
+        }
+      }
+    }, {
+      "match" : "kafka\\..*-time-secs.*",
+      "properties" : {
+        "sparseDataStrategy" : "ReplaceWithZero",
+        "tags" : {
+          "unit" : "s"
+        }
+      }
+    }, {
+      "match" : "kafka\\..*-time(-avg$|-max$|$)",
+      "properties" : {
+        "sparseDataStrategy" : "ReplaceWithZero",
+        "tags" : {
+          "unit" : "ms"
+        }
+      }
+    }, {
+      "match" : "kafka\\..*percent$",
+      "properties" : {
+        "tags" : {
+          "unit" : "percent"
+        },
+        "validMax" : 100
+      }
+    }, {
+      "match" : "kafka\\.zookeeper\\..*\\.has_owner$",
+      "properties" : {
+        "validMax" : 1
+      }
+    }, {
+      "match" : "kafka\\.zookeeper\\.zk_.*latency$",
+      "properties" : {
+        "tags" : {
+          "unit" : "ms"
+        }
+      }
+    }, {
+      "match" : "kafka\\.zookeeper\\.zk_.*data_size$",
+      "properties" : {
+        "tags" : {
+          "unit" : "bytes"
+        }
       }
     } ]
   }

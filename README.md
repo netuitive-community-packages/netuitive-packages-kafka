@@ -1,4 +1,9 @@
-#netuitive.packages.kafka 0.0.1 [PRELIMINARY VERSION]
+#netuitive.packages.kafka 1.0.0
 
-_**This is a preliminary release of the package for monitoring Kafka, for select customers. This package is still in development.**_
+For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Datasources/Netuitive/kafka.htm).
 
+##Release History
+
+###Version 1.0.0
+
+* Initial production version.

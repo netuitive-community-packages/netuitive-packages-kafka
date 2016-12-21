@@ -1,19 +1,29 @@
 {
   "policy" : {
     "id" : null,
-    "name" : "Kafka - Elevated Consumer Servicing Time",
-    "description" : "The broker is taking longer than usual to service consumer requests.",
+    "name" : "Kafka - Elevated Topic Activity",
+    "description" : "Network activity has been higher than expected for at least the past 30 minutes.",
     "scope" : {
       "elementName" : null,
       "elementNameExclude" : null,
       "fqnIncludes" : [ ],
       "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
+      "elementType" : null,
       "elementTags" : { }
     },
-    "duration" : 900,
+    "duration" : 1800,
     "conditions" : [ {
-      "metric" : "kafka.network.RequestMetrics.FetchConsumer.TotalTimeMs.Mean",
+      "metric" : "kafka.server.BrokerTopicMetrics._all.BytesInPerSec.Count",
+      "wildcard" : null,
+      "metricScopeTags" : { },
+      "analytic" : "baselineDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "kafka.server.BrokerTopicMetrics._all.BytesOutPerSec.Count",
       "wildcard" : null,
       "metricScopeTags" : { },
       "analytic" : "baselineDeviation",
