@@ -1,6 +1,6 @@
 {
   "id" : "netuitive.packages.kafka",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "manifest" : {
     "name" : "Netuitive Packages Kafka",
     "description" : "A set of Netuitive analytics configurations, polices, dashboards, and reports that are used to monitor performance of Kafka.",

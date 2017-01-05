@@ -8,7 +8,7 @@
       "elementNameExclude" : null,
       "fqnIncludes" : [ ],
       "fqnExcludes" : [ ],
-      "elementType" : null,
+      "elementType" : "SERVER",
       "elementTags" : { }
     },
     "duration" : 900,
