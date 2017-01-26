@@ -12,7 +12,10 @@
       "logo" : "http://assets.app.netuitive.com/pkg/logo/netuitive/banner_logo.png",
       "download" : "https://github.com/netuitive-community-packages/netuitive-packages-kafka/archive/master.zip"
     },
-    "compatibility" : [ "INFRASTRUCTURE:Kafka" ],
+    "compatibility" : [ 
+      "INFRASTRUCTURE:Kafka",
+      "INFRASTRUCTURE:KafkaJolokia"
+    ],
     "tags" : [ ],
     "checksum" : null
   },
