@@ -1,6 +1,6 @@
 #netuitive.packages.kafka 1.0.1
 
-For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Datasources/Netuitive/kafka.htm).
+For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/kafka.htm).
 
 ##Release History
 
