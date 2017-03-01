@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - "6"
+
+script:
+  - npm i git+https://git@github.com/Netuitive/netuitive-package-validator.git;
+    node -e "require('package-validator').validate('.', require('./package.json').id)";
