@@ -4,6 +4,10 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
+### Version next
+
+* Adjusted build to use metricly-cli for validation
+
 ### Version 1.1.0
 
 * Updated dashboard layouts for gridstack
