@@ -4,7 +4,7 @@ node_js:
 install:
 - npm i -g metricly-cli
 script:
-- metricly package validate
+- metricly package validate && metricly package lint
 notifications:
   slack:
     secure: kCEK1v+YdrUFLw2xtCZM45UPllfTC39iHf32cSm3lnOrdUH3ph3dk21+Mi5LG9x/DJ57YEbncukoWaUMKnAuRnsdAkZASScEsoAMo2SB8LJAPEPOf3GTfEYP+I3UaHx4MlitP9AKqsmd14B2WAEV7Ghy1eCdKckXeN41EAKq3goXBN4ZB2+85GJNLOI5Yb3WF9Uu8OsnbH/WdEjVu/W6SUz/GhgcWD71anhyf/hziCmkwKYcUGag8h/L09FIt1Mqi4X2oDgj1oe2OxIav7ilomAKuNCZUrrgr8uOWXC2fhaBLqj8RKK86+BQnkj+sEp3M4NkVQ4Iws7Y2q/8L588IvbimP7mVFmjIcQ0lVSy6fCgKFTKWpFHFe78KZ0m8oHZRtbhdTZ6XQYKXEx/TojmBEG8nET1C5/CMHdfYWmgs8J04qXsax7DP+o28TjpLMedyM3EU3MjROPNo7OI0y1iImbZMEZgBhmnh7U/W5F5oopdb4KlBRN6gxKngWVs0wobNfrfloxHHNiQHdbZLJbJZ1giYjJ1Ty5EOrtE7m5AL/FTmEUFUXaMhTmb+jf979S/uK/O6Hk/cBs0X/G04QRYl8NaaKeuvMWGaYNWeOYv/mCEm9mHZhrPdVEMvP7f6TfweKiD2bck6zoGY1AHCbX+13mczEzWYba8TOM1rLOP88Y=
