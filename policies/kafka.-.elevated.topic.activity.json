@@ -1,48 +1,30 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - Elevated Topic Activity",
-    "description" : "Network activity has been higher than expected for at least the past 30 minutes.",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 1800,
-    "conditions" : [ {
-      "metric" : "kafka.server.BrokerTopicMetrics._all.BytesInPerSec.Count",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    }, {
-      "metric" : "kafka.server.BrokerTopicMetrics._all.BytesOutPerSec.Count",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 2
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 2,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "baselineDeviation",
+        "metric": "kafka.server.BrokerTopicMetrics._all.BytesInPerSec.Count",
+        "operator": ">"
+      },
+      {
+        "analytic": "baselineDeviation",
+        "metric": "kafka.server.BrokerTopicMetrics._all.BytesOutPerSec.Count",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "Network activity has been higher than expected for at least the past 30 minutes.",
+    "duration": 1800,
+    "enabled": true,
+    "name": "Kafka - Elevated Topic Activity",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

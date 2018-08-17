@@ -1,38 +1,26 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - No Active Controllers",
-    "description" : "There are no active controllers in the Kafka cluster.",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 300,
-    "conditions" : [ {
-      "metric" : "kafka.controller.ActiveControllerCount",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "actual",
-      "operator" : "<",
-      "level" : 1.0,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 3
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "actual",
+        "level": 1,
+        "metric": "kafka.controller.ActiveControllerCount",
+        "operator": "<"
+      }
+    ],
+    "deleted": false,
+    "description": "There are no active controllers in the Kafka cluster.",
+    "duration": 300,
+    "enabled": true,
+    "name": "Kafka - No Active Controllers",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

@@ -1,38 +1,25 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - Extended Period of Consumer Lag",
-    "description" : "Consumer lag has been higher than expected for over an hour.",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 3900,
-    "conditions" : [ {
-      "metric" : null,
-      "wildcard" : "kafka.zookeeper.consumer_groups.*.consumer_lag",
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 3
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "baselineDeviation",
+        "operator": ">",
+        "wildcard": "kafka.zookeeper.consumer_groups.*.consumer_lag"
+      }
+    ],
+    "deleted": false,
+    "description": "Consumer lag has been higher than expected for over an hour.",
+    "duration": 3900,
+    "enabled": true,
+    "name": "Kafka - Extended Period of Consumer Lag",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

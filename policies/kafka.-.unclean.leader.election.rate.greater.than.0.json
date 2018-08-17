@@ -1,38 +1,26 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - Unclean Leader Election Rate Greater Than 0",
-    "description" : "An out-of-sync replica was chosen as leader because none of the available replicas were in sync.  Some data loss has occurred as a result.",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 300,
-    "conditions" : [ {
-      "metric" : "kafka.controller.UncleanLeaderElectionsPerSec.Count",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "actual",
-      "operator" : ">",
-      "level" : 0.0,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 3
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "actual",
+        "level": 0,
+        "metric": "kafka.controller.UncleanLeaderElectionsPerSec.Count",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "An out-of-sync replica was chosen as leader because none of the available replicas were in sync.  Some data loss has occurred as a result.",
+    "duration": 300,
+    "enabled": true,
+    "name": "Kafka - Unclean Leader Election Rate Greater Than 0",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

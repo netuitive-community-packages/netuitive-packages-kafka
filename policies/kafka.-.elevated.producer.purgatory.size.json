@@ -1,38 +1,25 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - Elevated Producer Purgatory Size",
-    "description" : "The purgatory size for producer requests is higher than expected.  This may be causing increases in producer request latency.",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 900,
-    "conditions" : [ {
-      "metric" : "kafka.server.DelayedOperationPurgatory.Produce.PurgatorySize",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 2
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 2,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "baselineDeviation",
+        "metric": "kafka.server.DelayedOperationPurgatory.Produce.PurgatorySize",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "The purgatory size for producer requests is higher than expected.  This may be causing increases in producer request latency.",
+    "duration": 900,
+    "enabled": true,
+    "name": "Kafka - Elevated Producer Purgatory Size",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

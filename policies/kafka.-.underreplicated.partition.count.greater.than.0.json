@@ -1,38 +1,26 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - UnderReplicated Partition Count Greater Than 0",
-    "description" : "The number of partitions which are under-replicated has been greater than 0 for at least 30 minutes. ",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 1800,
-    "conditions" : [ {
-      "metric" : "kafka.server.ReplicaManager.UnderReplicatedPartitions",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "actual",
-      "operator" : ">",
-      "level" : 0.0,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 3
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "actual",
+        "level": 0,
+        "metric": "kafka.server.ReplicaManager.UnderReplicatedPartitions",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "The number of partitions which are under-replicated has been greater than 0 for at least 30 minutes. ",
+    "duration": 1800,
+    "enabled": true,
+    "name": "Kafka - UnderReplicated Partition Count Greater Than 0",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }

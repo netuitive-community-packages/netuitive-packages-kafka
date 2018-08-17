@@ -1,38 +1,25 @@
 {
-  "policy" : {
-    "id" : null,
-    "name" : "Kafka - Elevated Zookeeper Latency",
-    "description" : "The average latency for Zookeeper requests has been higher than expected for at least the past 15 minutes.",
-    "scope" : {
-      "elementName" : null,
-      "elementNameExclude" : null,
-      "fqnIncludes" : [ ],
-      "fqnExcludes" : [ ],
-      "elementType" : "SERVER",
-      "elementTags" : { }
-    },
-    "duration" : 900,
-    "conditions" : [ {
-      "metric" : "kafka.zookeeper.zk_avg_latency",
-      "wildcard" : null,
-      "metricScopeTags" : { },
-      "analytic" : "baselineDeviation",
-      "operator" : ">",
-      "level" : null,
-      "level2" : null,
-      "metricThresholdLevel" : null,
-      "metricThresholdAnalytic" : null
-    } ],
-    "eventConditions" : [ ],
-    "actions" : [ {
-      "type" : "event",
-      "category" : 2
-    } ],
-    "enabled" : true,
-    "deleted" : false,
-    "originTenantId" : null,
-    "originPolicyId" : null,
-    "creatorEmail" : null,
-    "lastUpdated" : null
+  "policy": {
+    "actions": [
+      {
+        "category": 2,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "baselineDeviation",
+        "metric": "kafka.zookeeper.zk_avg_latency",
+        "operator": ">"
+      }
+    ],
+    "deleted": false,
+    "description": "The average latency for Zookeeper requests has been higher than expected for at least the past 15 minutes.",
+    "duration": 900,
+    "enabled": true,
+    "name": "Kafka - Elevated Zookeeper Latency",
+    "scope": {
+      "elementType": "SERVER"
+    }
   }
 }
