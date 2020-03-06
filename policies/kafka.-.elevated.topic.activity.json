@@ -24,7 +24,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Topic Activity",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

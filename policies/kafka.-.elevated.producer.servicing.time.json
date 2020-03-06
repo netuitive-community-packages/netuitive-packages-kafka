@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Producer Servicing Time",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

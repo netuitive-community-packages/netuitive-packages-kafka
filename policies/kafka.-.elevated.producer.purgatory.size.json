@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Producer Purgatory Size",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

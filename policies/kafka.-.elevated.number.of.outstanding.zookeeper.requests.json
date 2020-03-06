@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Number of Outstanding Zookeeper Requests",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

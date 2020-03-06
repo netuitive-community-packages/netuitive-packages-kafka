@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Depressed Number of Zookeeper Connections",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

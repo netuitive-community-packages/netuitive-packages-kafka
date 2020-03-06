@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Consumer Lag",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

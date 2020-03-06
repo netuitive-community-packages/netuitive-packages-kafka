@@ -20,7 +20,9 @@
     "enabled": true,
     "name": "Kafka - UnderReplicated Partition Count Greater Than 0",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

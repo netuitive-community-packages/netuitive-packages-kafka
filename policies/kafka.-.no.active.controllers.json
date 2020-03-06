@@ -20,7 +20,9 @@
     "enabled": true,
     "name": "Kafka - No Active Controllers",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }
