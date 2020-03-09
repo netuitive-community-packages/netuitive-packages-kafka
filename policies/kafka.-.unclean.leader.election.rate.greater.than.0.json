@@ -20,7 +20,9 @@
     "enabled": true,
     "name": "Kafka - Unclean Leader Election Rate Greater Than 0",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

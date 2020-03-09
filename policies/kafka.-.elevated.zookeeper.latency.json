@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Zookeeper Latency",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

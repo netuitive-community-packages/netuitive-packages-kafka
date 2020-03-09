@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Extended Period of Consumer Lag",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }

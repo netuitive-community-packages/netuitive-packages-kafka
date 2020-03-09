@@ -19,7 +19,9 @@
     "enabled": true,
     "name": "Kafka - Elevated Consumer Purgatory Size",
     "scope": {
-      "elementType": "SERVER"
+      "elementTypes": [
+        "SERVER"
+      ]
     }
   }
 }
